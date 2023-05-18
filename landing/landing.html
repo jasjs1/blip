@@ -14,7 +14,7 @@
 <body>
 
     <div class="head">
-        <h2 style="font-size: 2xl; color: #FFE6C7; text-align: center;">Unleash your creativity, share your magic craft!</h2>
+        <h2 style="font-size: 2xl; color: #FFE6C7; text-align: center;">Unleash your creativity, share your magic craft to the world! </h2>
     </div>
 
 
@@ -33,35 +33,36 @@
     <label for="password">Password</label>
     <input type="password" id="password" name="password" placeholder="Password" required>
   
-    <input type="submit" id="submit">
+    <input type="submit" id="submit" onclick="saveSignupInfo()">
+    <script>
+function saveSignupInfo() {
+  // Retrieve email and password from localStorage if available
+  document.getElementById('email').value = localStorage.getItem('savedEmail') || '';
+  document.getElementById('password').value = localStorage.getItem('savedPassword') || '';
+
+  // Event listener for submit button
+  document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Get the input values
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    // Save the input values to localStorage
+    localStorage.setItem('savedEmail', email);
+    localStorage.setItem('savedPassword', password);
+
+    // Navigate to the desired URL
+    window.location.href = 'http://127.0.0.1:5500/landing/signup/moreDetails/moreDetails.html';
+  });
+}
+
+// Call the function to attach the event listener
+saveSignupInfo();
+
+      </script>
   </div>
-  
-  <script>
-    // Retrieve email and password from localStorage if available
-    document.getElementById('email').value = localStorage.getItem('savedData') ? JSON.parse(localStorage.getItem('savedData')).email : '';
-    document.getElementById('password').value = localStorage.getItem('savedData') ? JSON.parse(localStorage.getItem('savedData')).password : '';
-  
-    // Event listener for submit button
-    document.getElementById('submit').addEventListener('click', function(event) {
-      event.preventDefault();
-  
-      // Get the input values
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-  
-      // Create a JSON object with email and password
-      var data = {
-        email: email,
-        password: password
-      };
-  
-      // Convert JSON object to a string and save it to localStorage
-      localStorage.setItem('savedData', JSON.stringify(data));
-  
-      // Perform any further actions here (e.g., form submission)
-      // ...
-    });
-  </script>
+
   
   
 
