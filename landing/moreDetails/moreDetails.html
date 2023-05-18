@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/svg/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/svg/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/svg/favicon.svg" />
+    <link rel="stylesheet" href="style.css">
+    <title>Blip - More Details</title>
+</head>
+<body>
+
+    <h2 style="font-size: 1.75rem; font-weight: 200; color: #FFE6C7;">MORE DETAILS | BLIP ACCOUNT</h2>
+
+    <div class="more-details">
+        <form id="form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="What is your name?" required>
+      
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="@username.blip" required>
+      
+          <label for="main-interests">Main Interests</label>
+          <select id="main-interests" required>
+            <option value=""></option>
+            <option value="Tech">Tech</option>
+            <option value="Music">Music</option>
+            <option value="Sports">Sports</option>
+            <option value="Business">Business</option>
+            <option value="Education">Education</option>
+            <option value="Productivity">Productivity</option>
+            <option value="TV">TV</option>
+            <option value="Movies">Movies</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Baking">Baking</option>
+            <option value="Writing">Writing</option>
+            <option value="Working">Working</option>
+            <option value="Puzzles">Puzzles</option>
+            <option value="Brain Puzzles">Brain Puzzles</option>
+            <option value="Making Music">Making Music</option>
+            <option value="Instrments">Instruments</option>
+            <option value="Finances">Finances</option>
+            <option value="Math">Math</option>
+            <option value="Sciences">Science</option>
+            <option value="Automobiles">Automobiles</option>
+            <option value="Animation">Animation</option>
+            <option value="Photography">Photography</option>
+            <option value="Learning">Learning</option>
+            <option value="Teaching">Teaching</option>
+            <option value="Gardening">Gardening</option>
+            <option value="Environment">Environment</option>
+            <option value="Driving">Driving</option>
+          </select>
+      
+          <label for="profile-image">Profile Image</label>
+          <input type="file" name="profile-image" id="profile-image" accept="image/png, image/jpg" required>
+      
+          <button type="submit" id="submit" onclick="saveSignupInfo()">Submit</button>
+        </form>
+        <script>
+            function saveSignupInfo() {
+  var form = document.getElementById('form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var username = document.getElementById('username').value;
+    var mainInterests = document.getElementById('main-interests').value;
+    var profileImage = document.getElementById('profile-image').value;
+
+    localStorage.setItem('name', name);
+    localStorage.setItem('username', username);
+    localStorage.setItem('mainInterests', mainInterests);
+    localStorage.setItem('profileImage', profileImage);
+
+    window.location.href = 'https://www.example.com';
+  });
+}
+
+saveSignupInfo();
+
+        </script>
+      </div>
+      
+    
+</body>
+</html>
