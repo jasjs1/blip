@@ -23,4 +23,4 @@ This website is in beta stages. Please expect bugs. If you do encounter a bug re
 
 Whats not welcomed:
 * New features ( I want to create the new features, because of just QA)
-* Not sure? Email me! mailto:j.sagvold.00@gmail.com?subject=Contributions%20On%20Blip
+* Not sure? Email me! mailto:j.sagvold.00@gmail.com?subject=Contributions%20On%20Blip.com
