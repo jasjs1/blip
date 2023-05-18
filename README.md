@@ -28,4 +28,4 @@ This website is in beta stages. Please expect bugs. If you do encounter a bug re
 ## Hiring Status:
 At this time I am not looking for any software engineers, backend engineers, or designers. Because currently this project is not making any money. But if you would like to do work voluntarily (~5hr software engineer, ~1.5hr designer per week) you will be much appreciated!
 
-If you would like to get into contact with me shoot me a email! [mailto:j.sagvold.00@gmail.com?
+If you would like to get into contact with me shoot me a email! mailto:j.sagvold.00@gmail.com
