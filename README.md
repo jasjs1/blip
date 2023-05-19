@@ -13,7 +13,7 @@ This website is in beta stages. Please expect bugs. If you do encounter a bug re
 1. Fork repo
 2. Create change
 3. Commit, create a PR
-4. Wait for me to approve.
+4. Wait for the the team to approve.
 
 ### What is welcomed:
 * Typos
