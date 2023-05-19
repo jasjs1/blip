@@ -6,7 +6,7 @@ body {
 
 input[type="text"] {
     background-color: #1c1f23;
-    border: 2px solid #FFE6C7;
+    border: 2px solid #4899D4;
     border-radius: 10px;
     padding: 13px 13px 13px 13px;
     color: white;
@@ -14,7 +14,7 @@ input[type="text"] {
 
 select {
     background-color: #1c1f23;
-    border: 2px solid #FFE6C7;
+    border: 2px solid #4899D4;
     border-radius: 10px;
     padding: 13px 13px 13px 13px;
     color: white;
@@ -22,7 +22,7 @@ select {
 
 input[type="submit"] {
     background-color: #1c1f23;
-    border: 2px solid #FFE6C7;
+    border: 2px solid #4899D4;
     border-radius: 10px;
     padding: 13px 13px 13px 13px;
     color: white;
@@ -30,8 +30,14 @@ input[type="submit"] {
 
 input[type="file"] {
     background-color: #1c1f23;
-    border: 2px solid #FFE6C7;
+    border: 2px solid #4899D4;
     border-radius: 10px;
     padding: 13px 13px 13px 13px;
     color: white;
+}
+
+input[type="file"] {
+    background-color: #1c1f23;
+    color: white;
+    padding: 10px 10px 10px 10px;
 }
