@@ -64,26 +64,7 @@
           <button type="submit" id="submit" onclick="saveSignupInfo()">Submit</button>
         </form>
         <script>
-            function saveSignupInfo() {
-  var form = document.getElementById('form');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    var name = document.getElementById('name').value;
-    var username = document.getElementById('username').value;
-    var mainInterests = document.getElementById('main-interests').value;
-    var profileImage = document.getElementById('profile-image').value;
-
-    localStorage.setItem('name', name);
-    localStorage.setItem('username', username);
-    localStorage.setItem('mainInterests', mainInterests);
-    localStorage.setItem('profileImage', profileImage);
-
-    window.location.href = 'https://www.example.com';
-  });
-}
-
-saveSignupInfo();
 
         </script>
       </div>
@@ -91,4 +72,5 @@ saveSignupInfo();
       
     
 </body>
+<script src="script.js"></script>
 </html>
