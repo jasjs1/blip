@@ -26,7 +26,7 @@ function saveSignupInfo() {
       localStorage.setItem('username', username);
       localStorage.setItem('mainInterests', mainInterests);
       localStorage.setItem('profileImage', profileImage);
-      window.location.href = 'https://www.example.com';
+      window.location.href = 'http://127.0.0.1:5500/.app/app.html';
     }
   }
   
