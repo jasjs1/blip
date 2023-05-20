@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="/dist/output.css" rel="stylesheet">
+    <title>placeholder</title>
+</head>
+<body>
+
+    <style>
+        body {
+    background-color: #1c1f23;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 125px;
+    margin-right: 125px;
+  }
+    </style>
+
+  
+
+<div class="info">
+
+    <script> 
+        function uploadImage() {
+          const fileInput = document.getElementById('image-upload');
+          fileInput.accept = 'image/jpeg, image/png, image/heic, image/svg+xml'; // Fix typo in MIME type
+          
+          fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+        
+            reader.onload = (e) => {
+              const uploadedImage = document.getElementById('uploaded-image');
+              uploadedImage.style.backgroundImage = `url(${e.target.result})`; // Set the uploaded image as background
+              uploadedImage.style.display = 'block';
+        
+              // Save image data to localStorage
+              localStorage.setItem('profileImage', e.target.result);
+      
+              // Reload the page
+              location.reload();
+            }
+        
+            reader.readAsDataURL(file);
+          });
+        
+          fileInput.click();
+        }
+      
+        // Check if there is a previously saved image in localStorage upon page load
+        window.addEventListener('load', () => {
+          const uploadedImage = document.getElementById('uploaded-image');
+          const savedImage = localStorage.getItem('profileImage');
+      
+          if (savedImage) {
+            uploadedImage.style.backgroundImage = `url(${savedImage})`;
+            uploadedImage.style.display = 'block';
+          } else {
+            uploadedImage.style.backgroundImage = 'url(/profile/img/default-user-profile.svg)';
+            uploadedImage.style.display = 'block';
+            localStorage.setItem('profileImage', '/profile/img/default-user-profile.svg');
+          }
+        });
+      </script>
+      
+      <div class="main-content">
+        <div class="profile-icon-selector-button">
+          <input type="file" id="image-upload" accept="image/jpeg, image/png, image/heic, image/svg+xml">
+          <img id="uploaded-image" src="#">
+        </div>
+      </div>
+      
+      
+      
+    
+        
+      <div class="main-content">
+        <div class="profile-icon-selector-button">
+          <input type="file" id="image-upload" accept="image/jpeg, image/png, image/heic, image/svg+xml" style="display:none;">
+          <img id="uploaded-image" src="#" alt="Uploaded Image" style="display:none;">
+        </div>
+      </div>
+
+    <h2 class="text-sky-500 text-2xl font-bold"><span id="signup-name"></span></h2>
+    <div class="username-container">
+      <h3 class="text-lowercase text-xl"><span id="user-username"></span></h3>
+      <h4><span id="tag"></span></h4>
+    </div>
+    <p id="description-text"></p>
+  </div>
+  
+  <script>
+    // Load user name and tag from local storage
+    const savedName = localStorage.getItem('name') || '';
+    const savedUserName = localStorage.getItem('username') || '';
+    const savedTag = localStorage.getItem('mainInterests') || '';
+  
+    // Update the user name and tag elements with the saved values
+    const nameElement = document.getElementById('signup-name');
+    nameElement.textContent = savedName;
+  
+    const userNameElement = document.getElementById('user-username');
+    const tagElement = document.getElementById('tag');
+  
+    userNameElement.textContent = `@${savedUserName}`;
+    tagElement.textContent = `@${savedUserName}.blip`;
+  
+    if (savedUserName) {
+      userNameElement.textContent = `@${savedUserName} `;
+    } else {
+      // userNameElement.textContent = 'No username found in local storage';
+    }
+  </script>
+
+  <div class="manage-account">
+    <button class="pt-6 border border-sky-500" typPe="button" id="manageAccount">MANAGE</button>
+</div>
+  
+  
+
+    
+</body>
+<script src="script.js"></script>
+</html>
