@@ -41,3 +41,9 @@ input[type="file"] {
     color: white;
     padding: 10px 10px 10px 10px;
 }
+
+img {
+    height: 150px;
+    width: auto;
+    border-radius: 12%;
+}
