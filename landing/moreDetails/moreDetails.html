@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <h2 class="text-3xl text-sky-500 font-medium mb-8">MORE DETAILS | BLIP ACCOUNT</h2>
+    <h2 class="text-3xl text-sky-500 font-medium mb-8 pt-3 pr-4 pl-5">MORE DETAILS | BLIP ACCOUNT</h2>
 
     <div class="more-details">
         <form id="form">
@@ -59,7 +59,24 @@
           </select>
       
           <label for="profile-image">Profile Image</label>
+          <img id="img" src="choose.png" height="150">
           <input type="file" name="profile-image" id="profile-image" accept="image/png, image/jpg" required>
+          
+
+          <script>
+            // JS
+
+let img = document.getElementById('img');
+let input = document.getElementById('profile-image');
+
+input.onchange = (e) => {
+    if (input.files [0]) {
+        img.src = URL.createObjectURL(input.files[0]);
+    }
+}
+          </script>
+
+          
       
           <button type="submit" id="submit" onclick="saveSignupInfo()">Submit</button>
         </form>
@@ -68,6 +85,8 @@
 
         </script>
       </div>
+
+    
 
       
     
