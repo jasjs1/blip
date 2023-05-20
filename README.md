@@ -37,4 +37,4 @@ At this time I am not looking for any software engineers, backend engineers, or 
 
 If you would like to get into contact with me shoot me a email! mailto:j.sagvold.00@gmail.com
 
-Preview the full requirements here: [https://github.com/jasjs1/blip/blob/main/Hiring.md](url)
+Preview the full requirements here: [https://github.com/jasjs1/blip/blob/main/Hiring.md]
