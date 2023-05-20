@@ -63,22 +63,21 @@
           <input type="file" name="profile-image" id="profile-image" accept="image/png, image/jpg" required>
           
 
-          <script>
-            // JS
+          <script>  
 
-let img = document.getElementById('img');
-let input = document.getElementById('profile-image');
+          let img = document.getElementById('img');
+          let input = document.getElementById('profile-image');
 
-input.onchange = (e) => {
-    if (input.files [0]) {
-        img.src = URL.createObjectURL(input.files[0]);
-    }
-}
+          input.onchange = (e) => {
+              if (input.files [0]) {
+                  img.src = URL.createObjectURL(input.files[0]);
+              }
+          }
           </script>
 
           
       
-          <button type="submit" id="submit" onclick="saveSignupInfo()">Submit</button>
+          <button type="submit" id="submit" onclick="saveSignupInfo()">Create Blip Account</button>
         </form>
         <script>
 
