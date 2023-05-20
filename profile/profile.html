@@ -27,67 +27,77 @@
 
 <div class="info">
 
-    <script> 
-        function uploadImage() {
-          const fileInput = document.getElementById('image-upload');
-          fileInput.accept = 'image/jpeg, image/png, image/heic, image/svg+xml'; // Fix typo in MIME type
-          
-          fileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-        
-            reader.onload = (e) => {
-              const uploadedImage = document.getElementById('uploaded-image');
-              uploadedImage.style.backgroundImage = `url(${e.target.result})`; // Set the uploaded image as background
-              uploadedImage.style.display = 'block';
-        
-              // Save image data to localStorage
-              localStorage.setItem('profileImage', e.target.result);
-      
-              // Reload the page
-              location.reload();
-            }
-        
-            reader.readAsDataURL(file);
-          });
-        
-          fileInput.click();
-        }
-      
-        // Check if there is a previously saved image in localStorage upon page load
-        window.addEventListener('load', () => {
+  <script>
+    function uploadImage() {
+      const fileInput = document.getElementById('image-upload');
+      fileInput.accept = 'image/jpeg, image/png, image/heic, image/svg+xml'; // Fix typo in MIME type
+  
+      fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+  
+        reader.onload = (e) => {
           const uploadedImage = document.getElementById('uploaded-image');
-          const savedImage = localStorage.getItem('profileImage');
-      
-          if (savedImage) {
-            uploadedImage.style.backgroundImage = `url(${savedImage})`;
-            uploadedImage.style.display = 'block';
-          } else {
-            uploadedImage.style.backgroundImage = 'url(/profile/img/default-user-profile.svg)';
-            uploadedImage.style.display = 'block';
-            localStorage.setItem('profileImage', '/profile/img/default-user-profile.svg');
-          }
-        });
-      </script>
-      <div class="main-content">
-        <div class="profile-icon-selector-button">
-          <input type="file" id="image-upload" accept="image/jpeg, image/png, image/heic, image/svg+xml">
-          <img id="uploaded-image" src="#">
-        </div>
-        <div class="info">
-          <h2 class="text-sky-500 text-2xl font-bold"><span id="signup-name"></span></h2>
-          <div class="username-container">
-            <h3 class="text-lowercase text-xl"><span id="user-username"></span></h3>
-            <h4><span id="tag"></span></h4>
-          </div>
-          <p id="description-text"></p>
-        </div>
+          uploadedImage.src = e.target.result; // Update the source attribute of the image
+          uploadedImage.style.display = 'block';
+  
+          // Save image data to localStorage
+          localStorage.setItem('profileImage', e.target.result);
+  
+          // Reload the page
+          location.reload();
+        }
+  
+        reader.readAsDataURL(file);
+      });
+  
+      fileInput.click();
+    }
+  
+    // Check if there is a previously saved image in localStorage upon page load
+    window.addEventListener('load', () => {
+      const uploadedImage = document.getElementById('uploaded-image');
+      const savedImage = localStorage.getItem('profileImage');
+  
+      if (savedImage) {
+        uploadedImage.src = savedImage; // Update the source attribute of the image
+        uploadedImage.style.display = 'block';
+      } else {
+        uploadedImage.src = '/profile/img/default-user-profile.svg'; // Update the source attribute of the image
+        uploadedImage.style.display = 'block';
+        localStorage.setItem('profileImage', '/profile/img/default-user-profile.svg');
+      }
+    });
+  </script>
+  
+  <div class="main-content">
+    <div class="profile-icon-selector-button">
+      <input type="file" id="image-upload" accept="image/jpeg, image/png, image/heic, image/svg+xml">
+      <img id="uploaded-image" src="#" alt="Profile Image"> <!-- Added alt attribute -->
+    </div>
+    <div class="info">
+      <h2 class="text-sky-500 text-2xl font-bold"><span id="signup-name"></span></h2>
+      <div class="username-container">
+        <h3 class="text-lowercase text-xl"><span id="user-username"></span></h3>
+        <h4><span id="tag"></span></h4>
       </div>
-      
+      <p id="description-text"></p>
+    </div>
+  </div>
+  
   
 
   <div class="manage-account">
     <img src="/assets/svg/pen.svg" id="pen-icon" width="35px" height="35px" alt="error showing pen SVG." onclick="showSettings()">
+</div>
+
+
+<div class="interact">
+  <button id="follow-btn" onclick="toggleFollow()">FOLLOW</button>
+  <button id="connect-btn" onclick="connectWithUser()">CONNECT</button>
+</div>
+
+  
 </div>
   
   
