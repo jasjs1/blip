@@ -44,115 +44,116 @@
         <select id="blip-tag" required>
           <option value="Uncategorized">Uncategorized</option>
           <option value="Tech">Tech</option>
-          <!-- Add other options here -->
+          <option value="Music">Music</option>
+          <option value="Sports">Sports</option>
+          <option value="Business">Business</option>
+          <option value="Education">Education</option>
+          <option value="Productivity">Productivity</option>
+          <option value="TV">TV</option>
+          <option value="Movies">Movies</option>
+          <option value="Fitness">Fitness</option>
+          <option value="Cooking">Cooking</option>
+          <option value="Baking">Baking</option>
+          <option value="Writing">Writing</option>
+          <option value="Working">Working</option>
+          <option value="Puzzles">Puzzles</option>
+          <option value="Brain Puzzles">Brain Puzzles</option>
+          <option value="Making Music">Making Music</option>
+          <option value="Instrments">Instruments</option>
+          <option value="Finances">Finances</option>
+          <option value="Math">Math</option>
+          <option value="Sciences">Science</option>
+          <option value="Automobiles">Automobiles</option>
+          <option value="Animation">Animation</option>
+          <option value="Photography">Photography</option>
+          <option value="Learning">Learning</option>
+          <option value="Teaching">Teaching</option>
+          <option value="Gardening">Gardening</option>
+          <option value="Environment">Environment</option>
+          <option value="Driving">Driving</option>
         </select>
       </div>
       
       <div id="posts"></div>
       
       <script>
-    const form = document.getElementById('post-form');
-    const postsContainer = document.getElementById('posts');
-    const assignTagDiv = document.getElementById('assignTag');
+const form = document.getElementById('post-form');
+const postsContainer = document.getElementById('posts');
 
-    // Check if name exists in local storage
-    let name = localStorage.getItem('name');
-    if (!name) {
-    // If not, prompt the user for their name and store it in local storage
-    name = prompt('Please enter your name:');
-    localStorage.setItem('name', name);
-    }
+// Check if name exists in local storage
+let name = localStorage.getItem('name');
+if (!name) {
+  // If not, prompt the user for their name and store it in local storage
+  name = prompt('Please enter your name:');
+  localStorage.setItem('name', name);
+}
 
-    // Load existing posts from local storage
-    const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+// Load existing posts from local storage
+const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+savedPosts.reverse();
 
-    // Render existing posts
-    for (let i = savedPosts.length - 1; i >= 0; i--) {
-    const post = savedPosts[i];
 
-    // Create a new post element
-    const postElement = document.createElement('div');
-    postElement.classList.add('post');
-    const author = localStorage.getItem('name');
-    postElement.innerHTML = `
-        <h2><span id="author">${author}</span></h2>
-        <h2 style="font-size: 1.2rem; margin-bottom: 5px;">${post.title}</h2>
-        <h4 style="margin-top: -1px; color: #fff;">${post.tags}</h4>
-        <p>${new Date(post.date).toLocaleString()}</p>
-    `;
+// Render existing posts
+for (let i = savedPosts.length - 1; i >= 0; i--) {
+  const post = savedPosts[i];
 
-    // Add the new post to the top of the list
-    postsContainer.appendChild(postElement);
+  // Create a new post element
+  const postElement = document.createElement('div');
+  postElement.classList.add('post');
+  const author = localStorage.getItem('name');
+  postElement.innerHTML = `
+  <!-- This is where you edit the posts (not the posts in the posts) --!>
+    <div class="post-setup" style="margin-left: 200px;">
+        <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
+        <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
+        <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
+        <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
+    </div>
+  `;
 
-    // Attach click event listener to bookmark button
-    const bookmarkButton = document.createElement('button');
-    bookmarkButton.classList.add('bookmark-button');
-    bookmarkButton.textContent = 'Bookmark';
-    bookmarkButton.addEventListener('click', function() {
-        // Retrieve existing bookmarks from localStorage or initialize an empty array
-        const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
-        // Check if the post is already bookmarked
-        const bookmarkIndex = bookmarks.findIndex(bookmark => bookmark.title === post.title);
-        if (bookmarkIndex !== -1) {
-        // Post is already bookmarked, so remove it
-        bookmarks.splice(bookmarkIndex, 1);
-        console.log('Removed ' + post.title + ' from post bookmarks.');
-        } else {
-        // Post is not bookmarked, so add it
-        bookmarks.push(post);
-        console.log('Added ' + post.title + ' to post bookmarks.');
-        }
+  postsContainer.appendChild(postElement);
+}
 
-        // Save the updated bookmarks array to localStorage
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-    });
+// Add new post and save to local storage
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-    postElement.appendChild(bookmarkButton);
-    }
+  // Get the input values
+  const title = document.getElementById('post-maker').value.trim();
+  const tags = document.getElementById('blip-tag').value.trim();
 
-    // Show the assign tag div when the tag icon is clicked
-    function showTagDiv() {
-    assignTagDiv.style.display = 'block';
-    }
+  // Create a new post object with title, tags, and a date property
+  const post = {
+    title,
+    tags,
+    date: Date.now()
+  };
 
-    // Add new post and save to local storage
-    form.addEventListener('submit', (event) => {
-    event.preventDefault();
+  // Create a new post element
+  const postElement = document.createElement('div');
+  postElement.classList.add('post');
+  const author = localStorage.getItem('name');
+  postElement.innerHTML = `
+    <h2><span id="author">${author}</span></h2>
+    <h2 style="font-size: 1.2rem; margin-bottom: 5px;">${post.title}</h2>
+    <h4 class="text-sky-500 font-bold text-sm" id="post-tag">${post.tags}</h4>
+    <p>${new Date(post.date).toLocaleString()}</p
+  `;
 
-    // Get the input values
-    const title = document.getElementById('post-maker').value.trim();
-    const tags = document.getElementById('blip-tag').value.trim();
+  // Add the new post to the top of the list
+  postsContainer.prepend(postElement);
 
-    // Create a new post object with title, tags, and a date property
-    const post = {
-        title,
-        tags,
-        date: Date.now()
-    };
+  // Add the new post to the beginning of the savedPosts array
+  savedPosts.unshift(post);
 
-    // Create a new post element
-    const postElement = document.createElement('div');
-    postElement.classList.add('post');
-    const author = localStorage.getItem('name');
-    postElement.innerHTML = `
-        <h2><span id="author">${author}</span></h2>
-        <h2 style="font-size: 1.2rem; margin-bottom: 5px;">${post.title}</h2>
-        <h4 class="text-sky-500 font-bold text-sm">${post.tags}</h4>
-    `;
+  // Save the updated savedPosts array to local storage
+  localStorage.setItem('posts', JSON.stringify(savedPosts));
 
-    // Add the new post to the top of the list
-    postsContainer.prepend(postElement);
-
-    // Add the new post to the beginning of the savedPosts array
-    savedPosts.unshift(post);
-
-    // Save the updated savedPosts array to local storage
-    localStorage.setItem('posts', JSON.stringify(savedPosts));
-
-    // Reset the form
-    form.reset();
-    });
+  // Reset the form
+  form.reset();
+  location.reload();
+});
 
       </script>
       
