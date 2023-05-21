@@ -64,7 +64,7 @@ body {
     background-color: #35383aab;
     display: flex;
     justify-content: center;
-    width: 75%;
+    width: 105%;
     max-width: 75%;
     border-radius: 8px;
     top: 0;
@@ -80,17 +80,92 @@ body {
     border-radius: 8px;
     padding: 10px;
     color: black;
-    position: absolute;
-    top: 15%;
-    left: 76%;
+    position: fixed;
+    top: 20%;
+    left: 75.9%;
   }
+  
 
   .addons {
     display: flex;
     fill: #5D97CF;
     color: #5D97CF;
     position: absolute;
-    top: 15%;
-    right: 76%;
+
+    top: 20%;
+    left: 20%;
+  }
+  
+   .assignTag {
+    color: black;
+    top: 25%;
+    left: 20%;
+    position: absolute;
+    display: none;
    }
+
+   select {
+    background-color: #1c1f23;
+    color: white;
+    border: 2px solid #5D97CF;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 12.5px;
+   }
+
+   .navigation-bar {
+    background-color: #1c1f23;
+    padding: 10px;
+    position: relative;
+    top: 5px;
+    font-size: 30;
+    justify-content: center;
+  }
+  
+  .navigation-bar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navigation-bar nav ul li {
+    margin: 0 10px;
+  }
+  
+  .navigation-bar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 7.5px;
+    transition: background-color 0.5s;
+  }
+  
+  .navigation-bar nav ul li a:hover {
+    font-weight: bold;
+    background-color: #5D97CF;
+  }
+  
+  .account {
+    position: absolute;
+    top: 10;
+    right: -100px;
+    float: right;
+  }
+
+  .icon-img {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    
+    left: -100px;
+  }
+  
+
+  #txt-lg {
+    float: left;
+    top: inherit;
+    left: 0;
+  }
   
