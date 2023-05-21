@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/svg/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/svg/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/svg/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <title>Blip - App</title>
+</head>
+<body>
+
+
+      <!-- <div class="apps" style="position: sticky; ">
+        apps placeholder
+    </div>
+
+    <div class="trending" style="position: sticky; " class="text-sky-400"> 
+        trending placeholder
+    </div> -->
+
+
+    <div class="create-post">
+        <input type="text" class="post-maker" id="post-maker" placeholder="Write something...">
+
+        <button type="submit" class="publish-btn" id="publish-btn" onclick="sendPostToLocalStorage()">Publish</button>
+
+        <div class="addons" class="flex">
+            <img src="/assets/svg/app/tag.svg" width="35" height="35" alt="Error showing the the tag SVG. Try refreshing the page.">
+            <img src="/assets/svg/app/link.svg" width="35" height="35" alt="Error showing the the link SVG. Try refreshing the page." onclick="createLink()">
+
+
+        </div>
+    </div>
+    
+
+    
+    
+</body>
+<script src="script.js"></script>
+<script src="addons.js"></script>
+<script src="sendPost.js"></script>
+</html>
