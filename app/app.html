@@ -22,10 +22,30 @@
           <ul>
             <!-- You can add other links inside of this-->
             <h2 class="text-sky-500 font-bold text-xl" id="txt-lg">Blip.co</h2>
-            <img class="account" src="/assets/svg/person.svg" height="40" width="40">
+            <img class="account" src="/assets/svg/person.svg" onclick="toggleProfileSelector()" height="40" width="40">
         </ul>
         </nav>
       </div>
+
+      <div id="profile-selector" style="display: none;">
+        <a href="http://127.0.0.1:5500/profile/profile.html">Profile</a>
+        <br>
+        <a href="http://127.0.0.1:5500/profile/dashboard/profile-dashboard.html">Dashboard</a>
+        <br>
+        <a href="http://127.0.0.1:5500/landing/landing.html">Logout</a>
+
+        <script>
+          function toggleProfileSelector() {
+  var profileSelector = document.getElementById("profile-selector");
+  if (profileSelector.style.display === "none") {
+    profileSelector.style.display = "block";
+  } else {
+    profileSelector.style.display = "none";
+  }
+}
+        </script>
+      </div>
+      
       
 
     <div class="create-post">
@@ -40,7 +60,7 @@
       </div>
       
       <div id="assignTag" class="assignTag">
-        <p class="text-sm text-sky-500">Assign a tag to this Blip:</p>
+        <p class="text-sm text-sky-500">Assign a tag to this Thought:</p>
         <select id="blip-tag" required>
           <option value="General">General</option>
           <option value="Tech">Tech</option>
@@ -90,6 +110,8 @@ if (!name) {
 
 // Load existing posts from local storage
 const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+savedPosts.reverse();
+
 
 // Render existing posts
 for (let i = savedPosts.length - 1; i >= 0; i--) {
@@ -100,14 +122,15 @@ for (let i = savedPosts.length - 1; i >= 0; i--) {
   postElement.classList.add('post');
   const author = localStorage.getItem('name');
   postElement.innerHTML = `
-    <!-- This is where you edit the posts (not the posts in the posts) -->
+  <!-- This is where you edit the posts (not the posts in the posts) --!>
     <div class="post-setup" style="margin-left: 200px;">
-      <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
-      <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
-      <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
-      <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
+        <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
+        <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
+        <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
+        <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
     </div>
   `;
+
 
   postsContainer.appendChild(postElement);
 }
@@ -132,12 +155,10 @@ form.addEventListener('submit', (event) => {
   postElement.classList.add('post');
   const author = localStorage.getItem('name');
   postElement.innerHTML = `
-  <div class="post-setup" style="margin-left: 200px;">
-      <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
-      <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
-      <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
-      <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
-    </div>
+    <h2><span id="author">${author}</span></h2>
+    <h2 style="font-size: 1.2rem; margin-bottom: 5px;">${post.title}</h2>
+    <h4 class="text-sky-500 font-bold text-sm" id="post-tag">${post.tags}</h4>
+    <p>${new Date(post.date).toLocaleString()}</p
   `;
 
   // Add the new post to the top of the list
@@ -153,11 +174,8 @@ form.addEventListener('submit', (event) => {
   form.reset();
   location.reload();
 });
- 
 
       </script>
-      
-      
 
 
     
@@ -167,4 +185,3 @@ form.addEventListener('submit', (event) => {
 <script src="addons.js"></script>
 <script src="sendPost.js"></script>
 </html>
- 
