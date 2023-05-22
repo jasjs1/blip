@@ -98,8 +98,8 @@ body {
   
    .assignTag {
     color: black;
-    top: 25%;
-    left: 20%;
+    top: 17%;
+    left: 7%;
     position: absolute;
     display: none;
    }
@@ -176,181 +176,26 @@ body {
     max-width: auto;
     overflow-wrap: break-word;
   }
-body {
-  background-color: #1c1f23;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 125px;
-  margin-right: 125px;
-}
-
-.navigation {
-    background-color: #f0f0f0;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navigation li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .navigation li a {
-    text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-  }
-  
-  .navigation li a:hover {
-    background-color: #ddd;
-  }
-  
-  .apps {
-    margin-left: 50px; 
-    float: left;
-    margin-top: 50px;
-    padding: 20px 20px 20px 20px;
-    background-color: #2f333788;
-    border-radius: 10px;
-    min-width: 250px;
-    min-height: 175px;
-  }
-
-  .trending {
-
-    margin-left: 50px; 
-    float: right;
-    margin-top: 50px;
-    padding: 20px 20px 20px 20px;
-    background-color: #2f333788;
-    border-radius: 10px;
-    min-width: 250px;
-    min-height: 175px;
-  }
-  
 
 
-  #post-maker {
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+
+  }
+
+  #submit-btn {
+    background-color: #5D97CF;
+    color: white;
     padding: 15px;
-    margin: 75px auto;
-    background-color: #35383aab;
-    display: flex;
-    justify-content: center;
-    width: 105%;
-    max-width: 75%;
-    border-radius: 8px;
-    top: 0;
-    left: 0;
-  }
-  
-  #post-maker ::placeholder {
-    text-align: center;
-  }
-  
-  #publish-btn {
-    background-color: #5D97CF;
-    border-radius: 8px;
-    padding: 10px;
-    color: black;
-    position: absolute;
-    top: 20%;
-    left: 75.9%;
-  }
-  
-
-  .addons {
-    display: flex;
-    fill: #5D97CF;
-    color: #5D97CF;
-    position: absolute;
-
-    top: 20%;
-    left: 20%;
-  }
-  
-   .assignTag {
-    color: black;
-    top: 25%;
-    left: 20%;
-    position: absolute;
-    display: none;
-   }
-
-   select {
-    background-color: #1c1f23;
-    color: white;
-    border: 2px solid #5D97CF;
     border-radius: 10px;
-    padding: 10px;
-    font-size: 12.5px;
-   }
+  }
 
-   .navigation-bar {
-    background-color: #1c1f23;
-    padding: 10px;
-    position: relative;
-    top: 5px;
-    font-size: 30;
-    justify-content: center;
-  }
-  
-  .navigation-bar nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .navigation-bar nav ul li {
-    margin: 0 10px;
-  }
-  
-  .navigation-bar nav ul li a {
-    color: #fff;
+  #author {
     text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 7.5px;
-    transition: background-color 0.5s;
-  }
-  
-  .navigation-bar nav ul li a:hover {
-    font-weight: bold;
-    background-color: #5D97CF;
-  }
-  
-  .account {
-    position: absolute;
-    top: 10;
-    right: -100px;
-    float: right;
   }
 
-  .icon-img {
-    height: 60px;
-    width: 60px;
-    position: absolute;
-    left: -100px;
+  h2.text-sky-500 a {
+    text-decoration: none;
   }
   
-
-  #txt-lg {
-    float: left;
-    top: inherit;
-    left: 0;
-  }
-  
-
-  .post-setup {
-    margin-top: 10px;
-    margin-left: 250px;
-    margin-right: 250px;
-    max-width: auto;
-    overflow-wrap: break-word;
-  }
