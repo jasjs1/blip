@@ -171,15 +171,15 @@ body {
 
   .post-setup {
     margin-top: 10px;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 450px;
+    margin-right: 450px;
     max-width: auto;
     overflow-wrap: break-word;
   }
 
 
   a {
-    text-decoration: underline;
+    color: #5D97CF;
     font-weight: bold;
 
   }
@@ -199,3 +199,32 @@ body {
     text-decoration: none;
   }
   
+  #profile-selector {
+    padding: 15px;
+    border: 2px solid #6C727F;
+    border-radius: 10px;
+    width: 9.6%;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    float: right; 
+  }
+  
+
+  #content-selector {
+    padding: 15px;
+    border: 2px solid #6C727F;
+    border-radius: 10px;
+    width: 9.6%;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    float: right; 
+  }
+  
+  .plus {
+    position: absolute;
+    top: 10;
+    right: -60px;
+    float: right;
+  }
