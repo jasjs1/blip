@@ -23,6 +23,7 @@
             <!-- You can add other links inside of this-->
             <h2 class="text-sky-500 font-bold text-xl" id="txt-lg">Blip.co</h2>
             <img class="account" src="/assets/svg/person.svg" onclick="toggleProfileSelector()" height="40" width="40">
+            <img class="plus" src="/assets/svg/plus.svg" onclick="toggleContentMaker()" height="40px" width="40px">
         </ul>
         </nav>
       </div>
@@ -43,6 +44,24 @@
     profileSelector.style.display = "none";
   }
 }
+        </script>
+      </div>
+
+      <div id="content-selector" style="display: none;">
+        <a class="no-underline" href="#">Thoughts</a>
+        <br>
+        <a class="no-underline" href="http://127.0.0.1:5500/articles/create/create-article.html">Article</a>
+        <br>
+
+        <script>
+              function toggleContentMaker() {
+        var profileSelector = document.getElementById("content-selector");
+        if (profileSelector.style.display === "none") {
+        profileSelector.style.display = "block";
+        } else {
+        profileSelector.style.display = "none";
+        }
+        }
         </script>
       </div>
       
