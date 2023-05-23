@@ -1,4 +1,7 @@
+const glob = require("glob");
+
 module.exports = {
+  content: glob.sync("./**/*.html"), // Retrieves all HTML files in the directory and subdirectories
   theme: {
     extend: {
       colors: {
@@ -23,6 +26,5 @@ module.exports = {
       'secondary': '#5D97CF',
     },
   },
-  variants: {},
   plugins: [],
 };
