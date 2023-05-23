@@ -75,8 +75,8 @@ body {
     text-align: center;
   }
   
-  #publish-btn {
-    background-color: #5D97CF;
+  #publish-btn-img {
+    /* background-color: #5D97CF; */
     border-radius: 8px;
     padding: 10px;
     color: black;
@@ -92,8 +92,7 @@ body {
     fill: #5D97CF;
     color: #5D97CF;
     position: absolute;
-
-    top: 33%;
+    top: 19.5%;
     left: 20%;
   }
   
@@ -177,6 +176,25 @@ body {
     max-width: auto;
     overflow-wrap: break-word;
   }
+
+    .post-setup #author {
+      color: #5D97CF;
+      font-weight: bold;
+  }
+
+  .post-setup #post-title {
+    font-weight: 300;
+}
+
+.post-setup #post-tags {
+  color: #5D97CF;
+  font-size: 14px;
+}
+
+.post-setup #post-date {
+  color: #5D97CF;
+  font-size: 14px;
+}
 
 
   a {
