@@ -144,9 +144,9 @@ for (let i = savedPosts.length - 1; i >= 0; i--) {
   <!-- This is where you edit the posts (not the posts in the posts) --!>
     <div class="post-setup" style="margin-left: 200px;">
         <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
-        <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
-        <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
-        <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
+        <h2 class="font-lg font-medium leading-10 break-all" id="post-title">${post.title}</h2>
+        <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;" id="post-tags">#${post.tags}</h4>
+        <p class="text-sky-500" id="post-date">${new Date(post.date).toLocaleDateString('en-US')} • ${new Date(post.date).toLocaleTimeString('en-US')}</p>
     </div>
   `;
 
