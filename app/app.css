@@ -81,8 +81,9 @@ body {
     padding: 10px;
     color: black;
     position: absolute;
-    top: 20%;
-    left: 75.9%;
+    top: 24.8%;
+    left: 83.9%;
+    
   }
   
 
@@ -92,7 +93,7 @@ body {
     color: #5D97CF;
     position: absolute;
 
-    top: 20%;
+    top: 33%;
     left: 20%;
   }
   
@@ -228,3 +229,28 @@ body {
     right: -60px;
     float: right;
   }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 11vh; /* Adjust the height as needed */
+    margin-bottom: 20px; /* Adjust the margin value to create the desired spacing */
+  }
+  
+  .article {
+    margin-left: 20px; /* Adjust the margin value to create the desired spacing */
+  }
+  
+  
+
+  .thoughts {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .article {
+    display: inline-flex;
+    align-items: center;
+  }
+  
