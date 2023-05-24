@@ -1,30 +1,9 @@
-const glob = require("glob");
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: glob.sync("./**/*.html"), // Retrieves all HTML files in the directory and subdirectories
+  content: ["./index.html"],
   theme: {
-    extend: {
-      colors: {
-        'c1': '#1c1f23',
-        'c2': '#4BA3E3',
-      },
-      fontWeight: {
-        thin: '100',
-        hairline: '100',
-        extralight: '200',
-        light: '300',
-        normal: '400',
-        medium: '500',
-        semibold: '600',
-        bold: '700',
-        extrabold: '800',
-        'extra-bold': '800',
-        black: '900',
-      }
-    },
-    colors: {
-      'secondary': '#5D97CF',
-    },
+    extend: {},
   },
   plugins: [],
-};
+}
+
