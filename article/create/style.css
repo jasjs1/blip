@@ -103,3 +103,19 @@ body {
       margin-bottom: 10px;
       border-radius: 10px;
     }
+
+    #aritcle-title-txt {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+
+    #article-summary-txt {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    #article-tag-txt {
+      margin-top: 10px;
+      font-size: 20px;
+    }
