@@ -14,20 +14,23 @@
 
     <div class="article-creator">
         <form>
-          <p class="text-slate-500">Article Title</p>
+          <p class="text-slate-500" id="aritcle-title-txt">Article Title</p>
           <input type="text" name="article-title" id="article-title" minlength="25" maxlength="100" required>
       
-          <p class="text-slate-500">Article Summary</p>
+          <p class="text-slate-500" id="article-summary-txt">Article Summary</p>
           <input type="text" name="article-summary" id="article-summary" minlength="25" maxlength="75" required>
       
+          <h3 id="article-tag-txt">Article Tag</h3>
           <select id="article-tag">
-            <option value="General">General</option>
-            <option value="Tech">Tech</option>
-            <option value="Music">Music</option>
-            <!-- Remaining options omitted for brevity -->
+            <!-- Options omitted for brevity -->
           </select>
       
-          <p class="text-slate-500">Content</p>
+          <h3 id="article-type-txt">Article Type</h3>
+          <select id="article-type-select">
+            <!-- Options omitted for brevity -->
+          </select>
+      
+          <p class="text-slate-500">Article Content</p>
           <input type="text" name="article-content" id="article-content" minlength="10" maxlength="4500">
         </form>
       
@@ -40,46 +43,62 @@
           const articleTitle = document.getElementById('article-title').value;
           const articleSummary = document.getElementById('article-summary').value;
           const articleTag = document.getElementById('article-tag').value;
+          const articleType = document.getElementById('article-type-select').value;
           const articleContent = document.getElementById('article-content').value;
       
-          // Create an object to store the article data
-          const article = {
+          // Create a new article object
+          const newArticle = {
             title: articleTitle,
             summary: articleSummary,
             tag: articleTag,
+            type: articleType,
             content: articleContent
           };
       
-          // Convert the object to JSON string
-          const articleJSON = JSON.stringify(article);
+          // Retrieve existing articles from localStorage
+          const existingArticlesJSON = localStorage.getItem('articles');
+          let existingArticles = [];
+          if (existingArticlesJSON) {
+            existingArticles = JSON.parse(existingArticlesJSON);
+          }
       
-          // Save the JSON string to localStorage
-          localStorage.setItem('article', articleJSON);
+          // Add the new article to the existing articles array
+          existingArticles.push(newArticle);
+      
+          // Convert the articles array to JSON string
+          const updatedArticlesJSON = JSON.stringify(existingArticles);
+      
+          // Save the updated JSON string to localStorage
+          localStorage.setItem('articles', updatedArticlesJSON);
       
           // Display a success message
-          alert('Article saved successfully!');
+          console.log('Article saved successfully!');
       
           // Reset the form
           document.querySelector('form').reset();
         }
       
         document.addEventListener('DOMContentLoaded', function() {
-          // Retrieve the saved article from localStorage if it exists
-          const savedArticleJSON = localStorage.getItem('article');
-          if (savedArticleJSON) {
-            const savedArticle = JSON.parse(savedArticleJSON);
+          // Retrieve the saved articles from localStorage if they exist
+          const existingArticlesJSON = localStorage.getItem('articles');
+          if (existingArticlesJSON) {
+            const existingArticles = JSON.parse(existingArticlesJSON);
       
-            // Populate the form fields with the saved article data
-            document.getElementById('article-title').value = savedArticle.title;
-            document.getElementById('article-summary').value = savedArticle.summary;
-            document.getElementById('article-tag').value = savedArticle.tag;
-            document.getElementById('article-content').value = savedArticle.content;
+            // Populate the form fields with the last saved article data
+            const lastArticle = existingArticles[existingArticles.length - 1];
+            document.getElementById('article-title').value = lastArticle.title;
+            document.getElementById('article-summary').value = lastArticle.summary;
+            document.getElementById('article-tag').value = lastArticle.tag;
+            document.getElementById('article-content').value = lastArticle.content;
+            document.getElementById('article-type-select').value = lastArticle.type;
           }
         });
       </script>
       
       
       
+      
 </body>
 <script src="script.js"></script>
+<script src="server.js"></script>
 </html>
