@@ -69,8 +69,12 @@
 
     <div class="create-post">
         <form id="post-form">
-          <input type="text" class="post-maker" id="post-maker" placeholder="Write something...">
-          <button type="submit" class="publish-btn" id="publish-btn">Publish</button>
+          <input type="text" class="post-maker" id="post-maker" placeholder="Write something..." min="3" max="450">
+          <!-- <button type="submit" class="publish-btn" id="publish-btn">Publish</button> -->
+          <button id="publish-btn">
+            <img src="/assets/svg/outward-arrow.svg" class="publish-btn-img" id="publish-btn-img">
+          </button>
+          
           <div class="addons" class="flex">
             <img src="/assets/svg/app/tag.svg" width="35" height="35" alt="Error showing the tag SVG. Try refreshing the page." onclick="showTagDiv()">
             <img src="/assets/svg/app/link.svg" width="35" height="35" alt="Error showing the link SVG. Try refreshing the page." onclick="createLink()">
@@ -129,8 +133,6 @@ if (!name) {
 
 // Load existing posts from local storage
 const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
-savedPosts.reverse();
-
 
 // Render existing posts
 for (let i = savedPosts.length - 1; i >= 0; i--) {
@@ -141,15 +143,14 @@ for (let i = savedPosts.length - 1; i >= 0; i--) {
   postElement.classList.add('post');
   const author = localStorage.getItem('name');
   postElement.innerHTML = `
-  <!-- This is where you edit the posts (not the posts in the posts) --!>
+    <!-- This is where you edit the posts (not the posts in the posts) -->
     <div class="post-setup" style="margin-left: 200px;">
-        <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
-        <h2 class="font-lg font-medium leading-10 break-all" id="post-title">${post.title}</h2>
-        <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;" id="post-tags">#${post.tags}</h4>
-        <p class="text-sky-500" id="post-date">${new Date(post.date).toLocaleDateString('en-US')} • ${new Date(post.date).toLocaleTimeString('en-US')}</p>
+      <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
+      <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
+      <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
+      <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
     </div>
   `;
-
 
   postsContainer.appendChild(postElement);
 }
@@ -174,10 +175,12 @@ form.addEventListener('submit', (event) => {
   postElement.classList.add('post');
   const author = localStorage.getItem('name');
   postElement.innerHTML = `
-    <h2><span id="author">${author}</span></h2>
-    <h2 style="font-size: 1.2rem; margin-bottom: 5px;">${post.title}</h2>
-    <h4 class="text-sky-500 font-bold text-sm" id="post-tag">${post.tags}</h4>
-    <p>${new Date(post.date).toLocaleString()}</p
+  <div class="post-setup" style="margin-left: 200px;">
+      <h2 class="text-sky-500 font-bold text-xl"><span id="author">${author}</span></h2>
+      <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
+      <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
+      <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
+    </div>
   `;
 
   // Add the new post to the top of the list
@@ -191,10 +194,11 @@ form.addEventListener('submit', (event) => {
 
   // Reset the form
   form.reset();
-  location.reload();
+//   location.reload();
 });
 
-      </script>
+
+          </script>
 
 
     
