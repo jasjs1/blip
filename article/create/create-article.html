@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Create Article · Blip</title>
+</head>
+<body>
+
+    <h2 class="text-sky-500 text-2xl pd-8">Create an Article</h2>
+
+    <div class="article-creator">
+        <form>
+          <p class="text-slate-500">Article Title</p>
+          <input type="text" name="article-title" id="article-title" minlength="25" maxlength="100" required>
+      
+          <p class="text-slate-500">Article Summary</p>
+          <input type="text" name="article-summary" id="article-summary" minlength="25" maxlength="75" required>
+      
+          <select id="article-tag">
+            <option value="General">General</option>
+            <option value="Tech">Tech</option>
+            <option value="Music">Music</option>
+            <!-- Remaining options omitted for brevity -->
+          </select>
+      
+          <p class="text-slate-500">Content</p>
+          <input type="text" name="article-content" id="article-content" minlength="10" maxlength="4500">
+        </form>
+      
+        <button type="submit" id="submit" onclick="sendArticleToLocalStorage()">SHARE</button>
+      </div>
+      
+      <script>
+        function sendArticleToLocalStorage() {
+          // Retrieve the input values
+          const articleTitle = document.getElementById('article-title').value;
+          const articleSummary = document.getElementById('article-summary').value;
+          const articleTag = document.getElementById('article-tag').value;
+          const articleContent = document.getElementById('article-content').value;
+      
+          // Create an object to store the article data
+          const article = {
+            title: articleTitle,
+            summary: articleSummary,
+            tag: articleTag,
+            content: articleContent
+          };
+      
+          // Convert the object to JSON string
+          const articleJSON = JSON.stringify(article);
+      
+          // Save the JSON string to localStorage
+          localStorage.setItem('article', articleJSON);
+      
+          // Display a success message
+          alert('Article saved successfully!');
+      
+          // Reset the form
+          document.querySelector('form').reset();
+        }
+      
+        document.addEventListener('DOMContentLoaded', function() {
+          // Retrieve the saved article from localStorage if it exists
+          const savedArticleJSON = localStorage.getItem('article');
+          if (savedArticleJSON) {
+            const savedArticle = JSON.parse(savedArticleJSON);
+      
+            // Populate the form fields with the saved article data
+            document.getElementById('article-title').value = savedArticle.title;
+            document.getElementById('article-summary').value = savedArticle.summary;
+            document.getElementById('article-tag').value = savedArticle.tag;
+            document.getElementById('article-content').value = savedArticle.content;
+          }
+        });
+      </script>
+      
+      
+      
+</body>
+<script src="script.js"></script>
+</html>
