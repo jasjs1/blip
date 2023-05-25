@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <h2 class="text-3xl text-sky-500 font-medium mb-8 pt-3 pr-4 pl-5">MORE DETAILS | BLIP ACCOUNT</h2>
+    <h2 class="text-3xl text-sky-500 font-medium mb-8 pt-3 pr-4 pl-5" id="complete-blip-account-hd">COMPLETE BLIP ACCOUNT</h2>
 
     <div class="more-details">
         <form id="form">
@@ -76,10 +76,10 @@
           </script>
 
         <div class="profile-type">
-          <p class="text-xl text-sky-500">Profile Type</p>
+          <p class="text-xl text-sky-500">Profile Type:</p>
           <select id="profile-type-sel" required>
               <option value="Personal Account">Personal Account</option>
-              <optoin value="Company/Corportaion">Company/Corportaion</optoin>
+              <option value="Company/Corportaion">Company/Corportaion</option>
               <option value="Newsletter">Newsletter</option>
               <option value="Email Campaign">Email Campaign</option> <!-- Maybe remove? -->
           </select>
@@ -87,7 +87,8 @@
 
           
       
-          <button type="submit" id="submit" onclick="saveSignupInfo()">Create Blip Account</button>
+          <button type="submit" id="submit" onclick="window.location.href='http://example.com'; saveSignupInfo()">Create Blip Account</button>
+
         </form>
         <script>
 
