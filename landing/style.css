@@ -152,7 +152,7 @@ body {
     background-color: #1c1f23;
     color: white;
     padding: 15px 15px 15px 15px;
-    border: 1px solid #FFE6C7;
+    border: 1px solid #4CA3E3;
     border-radius: 10px;
     margin-top: 25px;
   }
@@ -161,15 +161,15 @@ body {
     background-color: #1c1f23;
     color: white;
     padding: 15px 15px 15px 15px;
-    border: 1px solid #FFE6C7;
+    border: 1px solid #4CA3E3;
     border-radius: 10px;
   }
 
   input[type="submit"] {
-    background-color: #FFE6C7;
+    background-color: #4CA3E3;
     color: black;
     padding: 15px 15px 15px 15px;
-    border: 1px solid #FFE6C7;
+    border: 1px solid #4CA3E3;
     border-radius: 10px;
     font-weight: bold;
   }
@@ -237,11 +237,16 @@ body {
   }
 
   #why {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
 
   #unleash {
     text-align: center;
+  }
+
+  button {
+    background-color: #1c1f23;
+    border: 2px solid #4CA3E3;
   }
