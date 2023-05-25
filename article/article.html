@@ -13,8 +13,48 @@
 </head>
 <body>
 
-    <h2 class="text-sky-500">Articles</h2>
+
+    <h2 id="articles-txt" class="text-sky-500 text-3xl font-semibold">Articles</h2>
+
+    <div id="articles-container"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Retrieve the saved articles from localStorage if they exist
+        const existingArticlesJSON = localStorage.getItem('articles');
+        if (existingArticlesJSON) {
+          const existingArticles = JSON.parse(existingArticlesJSON);
+    
+          // Get the container element
+          const container = document.getElementById('articles-container');
+    
+          // Clear any existing content in the container
+          container.innerHTML = '';
+    
+          // Loop through each article and create an HTML element to display it
+          existingArticles.forEach(function(article) {
+            // Create a <div> element for each article
+            const articleElement = document.createElement('div');
+    
+            // Retrieve the author's name from localStorage
+            const authorName = localStorage.getItem('name');
+    
+            // Set up the article content
+            articleElement.innerHTML = `
+              <div class="article-setup">
+                <h2 class="text-sky-500 text-2xl">${authorName}</h2>
+              </div>
+            `;
+    
+            // Append the article element to the container
+            container.appendChild(articleElement);
+          });
+        }
+      });
+    </script>
+    
+
     
 </body>
-<script src="article.js"></script>
+<script src="displayArticle.js"></script>
 </html>
