@@ -18,4 +18,6 @@ function saveSignupInfo() {
     // Perform any further actions here (e.g., form submission)
     // ...
   });
+  window.location.href = "http://127.0.0.1:5500/app/app.html";
 }
+
