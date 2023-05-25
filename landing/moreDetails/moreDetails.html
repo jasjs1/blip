@@ -25,7 +25,7 @@
 
           
       
-          <label for="main-interests">Main Interests</label>
+          <label for="main-interests">Main Interest</label>
           <select id="main-interests" required>
             <option value=""></option>
             <option value="Tech">Tech</option>
@@ -75,9 +75,15 @@
           }
           </script>
 
-
-          <label for="isCompany">Are You a Company?</label>
-          <input type="checkbox" id="isCompany">
+        <div class="profile-type">
+          <p class="text-xl text-sky-500">Profile Type</p>
+          <select id="profile-type-sel" required>
+              <option value="Personal Account">Personal Account</option>
+              <optoin value="Company/Corportaion">Company/Corportaion</optoin>
+              <option value="Newsletter">Newsletter</option>
+              <option value="Email Campaign">Email Campaign</option> <!-- Maybe remove? -->
+          </select>
+        </div>
 
           
       
