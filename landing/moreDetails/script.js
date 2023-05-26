@@ -1,38 +1,18 @@
 function saveSignupInfo() {
-  var form = document.getElementById('form');
-  var isCompanyCheckbox = document.getElementById('isCompany');
+  // Get the input values
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var profileType = document.getElementById('profile-type-sel').value;
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  // Save the input values to localStorage
+  localStorage.setItem('savedEmail', email);
+  localStorage.setItem('savedPassword', password);
+  localStorage.setItem('savedProfileType', profileType);
 
-    var name = document.getElementById('name').value;
-    var username = document.getElementById('username').value;
-    var mainInterests = document.getElementById('main-interests').value;
-    var profileImageInput = document.getElementById('profile-image');
-    var profileImage = '';
+  // Display the profile type value
+  var profileTypeText = document.getElementById('profile-type-display');
+  profileTypeText.textContent = "Profile Type: " + profileType;
 
-    if (profileImageInput.files.length > 0) {
-      var reader = new FileReader();
-      reader.onload = function(event) {
-        profileImage = event.target.result;
-        saveDataToLocalStorage(name, username, mainInterests, profileImage);
-      };
-      reader.readAsDataURL(profileImageInput.files[0]);
-    } else {
-      saveDataToLocalStorage(name, username, mainInterests, profileImage);
-    }
-  });
-
-  function saveDataToLocalStorage(name, username, mainInterests, profileImage) {
-    localStorage.setItem('name', name);
-    localStorage.setItem('username', username);
-    localStorage.setItem('mainInterests', mainInterests);
-    localStorage.setItem('profileImage', profileImage);
-
-    // Set the cookie based on the checkbox state
-    var isCompanyValue = isCompanyCheckbox.checked ? 'true' : 'false';
-    document.cookie = 'isCompany=' + isCompanyValue + '; path=/';
-
-    window.location.href = 'http://127.0.0.1:5500/.app/app.html';
-  }
+  // Redirect to the desired location after saving to localStorage
+  window.location.href = "http://127.0.0.1:5500/app/app.html";
 }
