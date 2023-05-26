@@ -9,6 +9,7 @@
     <title>Create Article · Blip</title>
 </head>
 <body>
+  
 
     <h2 class="text-sky-500 text-2xl pd-8">Write an Article</h2>
 
@@ -69,61 +70,63 @@
       </div>
       
       <script>
-        function sendArticleToLocalStorage() {
-          // Retrieve the input values
-          const articleTitle = document.getElementById('article-title').value;
-          const articleSummary = document.getElementById('article-summary').value;
-          const articleTag = document.getElementById('article-tag').value;
-          const articleType = document.getElementById('article-type-select').value;
-          const articleContent = document.getElementById('article-content').value;
-      
-          // Create a new article object
-          const newArticle = {
-            title: articleTitle,
-            summary: articleSummary,
-            tag: articleTag,
-            type: articleType,
-            content: articleContent
-          };
-      
-          // Retrieve existing articles from localStorage
-          const existingArticlesJSON = localStorage.getItem('articles');
-          let existingArticles = [];
-          if (existingArticlesJSON) {
-            existingArticles = JSON.parse(existingArticlesJSON);
-          }
-      
-          // Add the new article to the existing articles array
-          existingArticles.push(newArticle);
-      
-          // Convert the articles array to JSON string
-          const updatedArticlesJSON = JSON.stringify(existingArticles);
-      
-          // Save the updated JSON string to localStorage
-          localStorage.setItem('articles', updatedArticlesJSON);
-      
-          // Display a success message
-          console.log('Article saved successfully!');
-      
-          // Reset the form
-          document.querySelector('form').reset();
-        }
-      
-        document.addEventListener('DOMContentLoaded', function() {
-          // Retrieve the saved articles from localStorage if they exist
-          const existingArticlesJSON = localStorage.getItem('articles');
-          if (existingArticlesJSON) {
-            const existingArticles = JSON.parse(existingArticlesJSON);
-      
-            // Populate the form fields with the last saved article data
-            const lastArticle = existingArticles[existingArticles.length - 1];
-            document.getElementById('article-title').value = lastArticle.title;
-            document.getElementById('article-summary').value = lastArticle.summary;
-            document.getElementById('article-tag').value = lastArticle.tag;
-            document.getElementById('article-content').value = lastArticle.content;
-            document.getElementById('article-type-select').value = lastArticle.type;
-          }
-        });
+function sendArticleToLocalStorage() {
+  // Retrieve the input values
+  const articleTitle = document.getElementById('article-title').value;
+  const articleSummary = document.getElementById('article-summary').value;
+  const articleTag = document.getElementById('article-tag').value;
+  const articleType = document.getElementById('article-type-select').value;
+  const articleContent = document.getElementById('article-content').value;
+
+  // Create a new article object with the current date
+  const newArticle = {
+    title: articleTitle,
+    summary: articleSummary,
+    tag: articleTag,
+    type: articleType,
+    content: articleContent,
+    date: new Date().toLocaleDateString() // Add the current date
+  };
+
+  // Retrieve existing articles from localStorage
+  const existingArticlesJSON = localStorage.getItem('articles');
+  let existingArticles = [];
+  if (existingArticlesJSON) {
+    existingArticles = JSON.parse(existingArticlesJSON);
+  }
+
+  // Add the new article to the existing articles array
+  existingArticles.push(newArticle);
+
+  // Convert the articles array to JSON string
+  const updatedArticlesJSON = JSON.stringify(existingArticles);
+
+  // Save the updated JSON string to localStorage
+  localStorage.setItem('articles', updatedArticlesJSON);
+
+  // Display a success message
+  console.log('Article saved successfully!');
+
+  // Reset the form
+  document.querySelector('form').reset();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Retrieve the saved articles from localStorage if they exist
+  const existingArticlesJSON = localStorage.getItem('articles');
+  if (existingArticlesJSON) {
+    const existingArticles = JSON.parse(existingArticlesJSON);
+
+    // Populate the form fields with the last saved article data
+    const lastArticle = existingArticles[existingArticles.length - 1];
+    document.getElementById('article-title').value = lastArticle.title;
+    document.getElementById('article-summary').value = lastArticle.summary;
+    document.getElementById('article-tag').value = lastArticle.tag;
+    document.getElementById('article-content').value = lastArticle.content;
+    document.getElementById('article-type-select').value = lastArticle.type;
+  }
+});
+
       </script>
       
       
