@@ -12,28 +12,24 @@ body {
 }
 
 #article-tag {
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    background-color: #3c3f42bb;
     max-width: 7%;
     text-align: center;
     border-radius: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
+    color: #5D97CF;
+    
 }
 
 #article-type {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: #3c3f42bb;
+    background-color: #1c1f23;
     max-width: 13%;
     text-align: center;
     border-radius: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
     white-space: nowrap;
+    color: #5D97CF;
 }
 
 
