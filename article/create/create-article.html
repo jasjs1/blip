@@ -29,36 +29,35 @@
       
           <h3 id="article-tag-txt">Article Tag</h3>
           <select id="article-tag">
-            <option value="General">General</option>
-            <option value="Tech">Tech</option>
-            <option value="Music">Music</option>
-            <option value="Sports">Sports</option>
-            <option value="Business">Business</option>
-            <option value="Education">Education</option>
-            <option value="Productivity">Productivity</option>
-            <option value="TV">TV</option>
-            <option value="Movies">Movies</option>
-            <option value="Fitness">Fitness</option>
-            <option value="Cooking">Cooking</option>
-            <option value="Baking">Baking</option>
-            <option value="Writing">Writing</option>
-            <option value="Working">Working</option>
-            <option value="Puzzles">Puzzles</option>
-            <option value="Brain Puzzles">Brain Puzzles</option>
-            <option value="Making Music">Making Music</option>
-            <option value="Instrments">Instruments</option>
-            <option value="Finances">Finances</option>
-            <option value="Math">Math</option>
-            <option value="Sciences">Science</option>
-            <option value="Automobiles">Automobiles</option>
-            <option value="Animation">Animation</option>
-            <option value="Photography">Photography</option>
-            <option value="Learning">Learning</option>
-            <option value="Teaching">Teaching</option>
-            <option value="Gardening">Gardening</option>
-            <option value="Environment">Environment</option>
-            <option value="Driving">Driving</option>
-            <option value="Other">Other</option>
+            <option value="general">General</option>
+            <option value="tech">Tech</option>
+            <option value="music">Music</option>
+            <option value="sports">Sports</option>
+            <option value="business">Business</option>
+            <option value="education">Education</option>
+            <option value="productivity">Productivity</option>
+            <option value="tv">TV</option>
+            <option value="movies">Movies</option>
+            <option value="fitness">Fitness</option>
+            <option value="cooking">Cooking</option>
+            <option value="baking">Baking</option>
+            <option value="writing">Writing</option>
+            <option value="working">Working</option>
+            <option value="puzzles">Puzzles</option>
+            <option value="composing-music">Composing Music</option>
+            <option value="musical-instruments">Musical Instruments</option>
+            <option value="finances">Finances</option>
+            <option value="math">Math</option>
+            <option value="sciences">Science</option>
+            <option value="automobiles">Automobiles</option>
+            <option value="animation">Animation</option>
+            <option value="photography">Photography</option>
+            <option value="learning">Learning</option>
+            <option value="teaching">Teaching</option>
+            <option value="gardening">Gardening</option>
+            <option value="environment">Environment</option>
+            <option value="driving">Driving</option>
+            <option value="other">Other</option>
           </select>
       
           <h3 id="article-type-txt">Article Type</h3>
@@ -68,11 +67,11 @@
             <option value="Buisness Article">Buisness Article</option>
           </select>
       
-          <p class="text-slate-500">Article Content</p>
-          <textarea type="text" name="article-content" id="article-content" minlength="10" maxlength="4500">
-        </form>
-      
-        <button type="submit" id="submit" onclick="sendArticleToLocalStorage()">SHARE ARTICLE</button>
+          <textarea type="text" name="article-content" id="article-content" minlength="10" maxlength="4500"></textarea>
+          <button class="text-sky-500" type="submit" id="submit" onclick="sendArticleToLocalStorage()">
+              <i class="fas fa-check"></i> SHARE ARTICLE
+          </button>
+          
       </div>
       
       <script>
