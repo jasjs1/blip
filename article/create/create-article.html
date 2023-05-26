@@ -85,7 +85,8 @@ function sendArticleToLocalStorage() {
     tag: articleTag,
     type: articleType,
     content: articleContent,
-    date: new Date().toLocaleDateString() // Add the current date
+    date: new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).replace(/\//g, '.') // Add the current date with dot separator
+
   };
 
   // Retrieve existing articles from localStorage
