@@ -67,7 +67,47 @@
             <option value="Buisness Article">Buisness Article</option>
           </select>
       
-          <textarea type="text" name="article-content" id="article-content" minlength="10" maxlength="4500"></textarea>
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <script src="https://cdn.tiny.cloud/1/ck3bham2h9g75d6oa37tjarl9gn9cosyhp8sn8xkoplr5i7o/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+            <style>
+              #article-content {
+                background-color: #1c1f23;
+                border: 2px solid #4899D4;
+                border-radius: 10px;
+                padding: 13px;
+                color: white;
+                width: 850px;
+                max-width: 1250px;
+              }
+            </style>
+          </head>
+          <body>
+            <textarea id="article-content">
+                Write an article...
+            </textarea>
+            <script>
+              tinymce.init({
+                selector: 'textarea',
+                content_css: 'style.css', // Path to your CSS file
+                plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+                mergetags_list: [
+                  { value: 'First.Name', title: 'First Name' },
+                  { value: 'Email', title: 'Email' },
+                ],
+              });
+
+              console.log('TinyMCE RTE is now enabled.')
+            </script>
+          </body>
+          </html>
+          
+          
+          
           <button class="text-sky-500" type="submit" id="submit" onclick="sendArticleToLocalStorage()">
               <i class="fas fa-check"></i> SHARE ARTICLE
           </button>
