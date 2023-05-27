@@ -1,4 +1,6 @@
 # Course Requirements
+Learn on Blip!
+Teach on Blip!
 
 ## Account Requirements:
 1. Active Blip account
