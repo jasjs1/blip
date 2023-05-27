@@ -1,4 +1,4 @@
-# Course Requirements
+# Teaching on Blip Requirements
 Learn on Blip!
 Teach on Blip!
 
