@@ -165,8 +165,30 @@ for (let i = savedPosts.length - 1; i >= 0; i--) {
       <h2 class="font-lg font-medium leading-10 break-all">${post.title}</h2>
       <h4 class="text-sky-400 font-sm font-hairline" style="text-transform: lowercase;">#${post.tags}</h4>
       <p class="text-sky-500">${new Date(post.date).toLocaleString()}</p>
+      <div id="interact" class="py-2 flex gap-4 text-gray-500">
+        <img src="/assets/svg/interact/like.svg" width="24" height="24" id="like" onclick="updateLikeCount()">0
+        <img src="/assets/svg/interact/dislike.svg" width="24" height="24" id="dislike" onclick="updateDislikeCount()">0 
+        <img src="/assets/svg/interact/bookmark.svg" width="24" height="24" id="bookmark" onclick="updateBookmarkCount()">0
+      </div>
     </div>
+    
   `;
+
+function updateLikeCount() {
+    var likeCount = document.getElementById('like');
+    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+}
+
+
+function updateDislikeCount() {
+    var dislikeCount = document.getElementById('dislike');
+    dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
+}
+
+function updateBookmarkCount() {
+    var bookmarkCount = document.getElementById('bookmark');
+    bookmarkCount.textContent = parseInt(bookmarkCount.textContent) + 1;
+}
 
   postsContainer.appendChild(postElement);
 }
@@ -210,7 +232,7 @@ form.addEventListener('submit', (event) => {
 
   // Reset the form
   form.reset();
-//   location.reload();
+  location.reload();
 });
 
 
