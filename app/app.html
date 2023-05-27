@@ -22,6 +22,7 @@
             <h2 class="text-sky-500 font-bold text-xl" id="txt-lg">Blip</h2>
             <img class="account" src="/assets/svg/person.svg" onclick="toggleProfileSelector()" height="40" width="40">
             <img class="plus" src="/assets/svg/plus.svg" onclick="toggleContentMaker()" height="40px" width="40px">
+            <img class="app-dwr" src="/assets/svg/apps.svg" onclick="toggleAppDrawer()" height="40px" width="40px">
         </ul>
         </nav>
       </div>
@@ -50,9 +51,10 @@
         <br>
         <a class="no-underline" href="http://127.0.0.1:5500/article/create/create-article.html">Article</a>
         <br>
+        <a class="no-underline" href="http://127.0.0.1:5500/course/create/create-course.html">Course</a>
 
         <script>
-              function toggleContentMaker() {
+      function toggleContentMaker() {
         var profileSelector = document.getElementById("content-selector");
         if (profileSelector.style.display === "none") {
         profileSelector.style.display = "block";
@@ -61,6 +63,20 @@
         }
         }
         </script>
+      </div>
+
+      <div id="app-select" style="display: none;">
+        <a href="http://127.0.0.1:5500/article/article.html">Articles</a>
+<script>
+        function toggleAppDrawer() {
+        var profileSelector = document.getElementById("app-select");
+        if (profileSelector.style.display === "none") {
+        profileSelector.style.display = "block";
+        } else {
+        profileSelector.style.display = "none";
+        }
+        }
+</script>
       </div>
       
       
